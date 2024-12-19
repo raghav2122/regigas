@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // Ensure React is imported
 import './Install.css';
 import './Install.scss';
 import SupabaseClientApp from '../../supabase';
