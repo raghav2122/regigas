@@ -1,24 +1,39 @@
 {
   "manifest_version": 3,
   "name": "Leetcode-maxxing",
-  "description": "A chrome extension boilerplate built with React 18, Webpack 5, and Webpack Dev Server 4",
+  "version": "1.0.0",
+  "description": "A Chrome extension boilerplate built with React 18, Webpack 5, and Webpack Dev Server 4.",
   "options_page": "options.html",
   "background": {
     "service_worker": "background.bundle.js"
   },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2ug09LB3/otLHy0L71aepSUKb7ZT8kb83oxDDAh9YJdysGNpziGZ4NkSoE5G6Bg8IGmz807Ve4MyniMJBcVTNfxoZJl46/AlMkU+109OZh2m9oW4r19jo2cPYUeMUOq6ZRXcJaDIWQtwe/XgwPrHEOJoVG/KeBh/jU5IqZ4tMKk9icantFGgJ8J6OSFTWpsuH8SCNSutErFxcZ4w64UcU3/vPo04oeWiTDiCH9nY03a8MTIJMIhqilbgrpTsX8/ceyV+ojePXE1C5LK921l8N/xXLGU9Zs/bImxiDe04S3uuOWsmwLnS1XCdj7vLlC7iW6JD9YZvKgWM3kyQWVh3QwIDAQAB",
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon-34.png"
   },
+  "permissions": [
+    "storage",
+    "identity"
+  ],
+  "oauth2": {
+    "client_id": "your-google-client-id",
+    "scopes": [
+      "profile",
+      "email"
+    ]
+  },
   "icons": {
     "128": "icon-128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
   },
   "content_scripts": [
     {
       "matches": [
         "http://*/*",
-        "https://*/*",
-        "<all_urls>"
+        "https://*/*"
       ],
       "js": [
         "contentScript.bundle.js"
@@ -33,10 +48,13 @@
     {
       "resources": [
         "content.styles.css",
+        "install.html",
         "icon-128.png",
         "icon-34.png"
       ],
-      "matches": []
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ]
 }
