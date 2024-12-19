@@ -1,4 +1,4 @@
-import React from 'react'; // Import React to ensure it is in scope for JSX
+import React from 'react';
 import { createClient } from '@supabase/supabase-js';
 import secrets from '../secrets.development';
 

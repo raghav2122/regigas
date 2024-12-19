@@ -40,6 +40,7 @@ var options = {
   entry: {
     newtab: path.join(__dirname, 'src', 'pages', 'Newtab', 'index.jsx'),
     install: path.join(__dirname, 'src', 'pages', 'Install', 'index.jsx'),
+    userForm: path.join(__dirname, 'src', 'pages', 'User-form', 'index.jsx'),
     options: path.join(__dirname, 'src', 'pages', 'Options', 'index.jsx'),
     popup: path.join(__dirname, 'src', 'pages', 'Popup', 'index.jsx'),
     background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
@@ -195,7 +196,13 @@ var options = {
       template: path.join(__dirname, 'src', 'pages', 'Install', 'index.html'),
       filename: 'install.html',
       chunks: ['install'],
-      cache: true,
+      cache: false,
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'pages', 'User-Form', 'index.html'),
+      filename: 'userForm.html',
+      chunks: ['userForm'],
+      cache: false,
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'pages', 'Options', 'index.html'),
