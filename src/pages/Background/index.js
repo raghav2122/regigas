@@ -14,9 +14,9 @@ chrome.runtime.onInstalled.addListener((object) => {
   }
 });
 
-chrome.cookies.get({ domain: 'localhost' }, (cookies) => {
-  console.log('Cookies:', cookies);
-});
+// chrome.cookies.get({ domain: 'localhost' }, (cookies) => {
+//   console.log('Cookies:', cookies);
+// });
 
 // Trigger sign-in process when the browser action (or action in MV3) is clicked
 chrome.action.onClicked.addListener(async () => {
