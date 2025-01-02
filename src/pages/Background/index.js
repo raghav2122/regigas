@@ -5,7 +5,7 @@ const supabase = createClient(secrets.supabaseUrl, secrets.supabaseKey);
 
 // Listen for extension installation
 chrome.runtime.onInstalled.addListener((object) => {
-  const externalUrl = chrome.runtime.getURL('install.html'); // Serve your app's HTML file.
+  const externalUrl = chrome.runtime.getURL('localhost:3001/welcome'); // Serve your app's HTML file.
 
   if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
     chrome.tabs.create({ url: externalUrl }, (tab) => {
