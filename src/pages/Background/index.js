@@ -5,13 +5,17 @@ const supabase = createClient(secrets.supabaseUrl, secrets.supabaseKey);
 
 // Listen for extension installation
 chrome.runtime.onInstalled.addListener((object) => {
-  const externalUrl = chrome.runtime.getURL('http://localhost:3001/welcome'); // Serve your app's HTML file.
+  const externalUrl = 'http://localhost:3001/welcome'; // Serve your app's HTML file.
 
   if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
     chrome.tabs.create({ url: externalUrl }, (tab) => {
       console.log('React app opened in a new tab:', tab);
     });
   }
+});
+
+chrome.cookies.get({ domain: 'localhost' }, (cookies) => {
+  console.log('Cookies:', cookies);
 });
 
 // Trigger sign-in process when the browser action (or action in MV3) is clicked
